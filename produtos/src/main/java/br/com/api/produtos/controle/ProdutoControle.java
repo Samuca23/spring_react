@@ -26,4 +26,9 @@ public class ProdutoControle {
     public ResponseEntity<?> alterar(@RequestBody ProdutoModelo pm) {
         return ps.cadastrarAlterar(pm, "alterar");
     }
+
+    @DeleteMapping("/excluir/{codigo}")
+    public ResponseEntity<?> excluir(@PathVariable Long codigo) {
+        return ps.remover(codigo);
+    }
 }
